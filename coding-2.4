@@ -1,0 +1,115 @@
+# Governance episode coding guide
+
+Version 2.7, 29 March 2026 (cleaned)
+
+## 1. What counts as a governance episode?
+
+A governance episode is a recorded occasion when people involved in a project raise, discuss, decide on or act upon a concern about the responsible development or use of a particular AI system. This may concern its purpose, data, safety, fairness, reliability, permissions, oversight, responsibilities or required evidence. The work does not have to be called “AI governance”. An episode can be without a (resulting) decision, action, or artifact. For example, a change to an access rule may qualify even if nobody calls it governance, provided the rule has a documented connection to the AI data.
+
+Include an episode when you can answer three questions:
+
+1. Which AI system or proposed AI function is involved? Identify the project, model or module, and any relevant data or workflow.
+2. What makes the issue relevant to Responsible AI? For example, does it affect patient safety, permitted data use, who may act on a prediction, or what evidence is needed before use?
+3. What did someone actually say or do about it? Find a question, concern, request, requirement, discussion, decision or action in the records.
+
+If one answer is missing, check the other project records or ask someone familiar with the project. Include the episode only when there is enough supporting information. Exclude generic statements about ethics, routine software tasks and imagined risks without a clear connection to the identified AI work. An AI function that was proposed but never built can still qualify.
+
+Give each episode a short description of the task, such as “Decide whether patient records can be shared to train the risk model”. Use one episode for that task even if it appears in several calls or documents. Create a separate episode when the task or AI use is different. A later reconsideration can be linked to the earlier episode.
+
+## 2. What to record
+
+Start with the following entities. Use existing project codes and names where possible. Add a new entity when the records identify something important that these categories cannot describe.
+
+- Project: the specific initiative, identified by its Org code. Record its purpose, country or setting where relevant, and TRL.
+- IntendedUse: what the AI is intended to do, for whom, and in which clinical or other setting. Note restrictions such as “research only”.
+- AIComponent: the model or AI function involved. Note whether it is proposed, in development or in use. Distinguish it from an ordinary app feature.
+- Dataset: the records, measurements or other data used or proposed for the AI. Record their origin and permitted use when relevant.
+- Role: a person or group involved in the project, such as its clinician, CEO, developer, patient representative or reviewer. For the Decision Maker (DM), use the first senior person within the project named or referred to in the relevant records, usually the founder, principal investigator or project lead. Do not choose an external funder, reviewer or adviser as DM. If none is identified, leave the field blank. Record other people involved separately. Do not assume that a person mentioned in a document participated.
+- TopLevelProblem (TopLevelNeed): record two kinds of need separately. An RAI need is the governance task, such as “Establish evidence that predictions are safe for clinical use”. A decision-maker need is a wider project goal, such as “Secure funding” or “Start a clinical pilot”, which prompted the RAI task or arose from it. Link each need to the Role concerned. A wider goal is not itself a governance episode.
+- Feature: a proposed or existing way to address the concern, such as clinician review, access restrictions or a monitoring procedure.
+- EvidenceArtifact: an item that shows a requirement, assessment or action, such as an ethics submission, validation report, contract or audit log. Note whether it was requested, planned, produced or approved.
+- Regulation: a named legal instrument, such as the EU AI Act or GDPR.
+- RegulatoryRequirement: a particular obligation traced to a named regulation. Keep funding conditions, ethics-review requests and contractual conditions separate from legal requirements.
+- Funder: an organisation or programme financing the project.
+- Hub: an accelerator or other organisation supporting innovation projects.
+
+Add useful details such as patient group, organisation, location, data owner, external authority or available expertise when they help explain the episode. Leave a field unknown rather than inventing an answer.
+
+## 3. How to code the records
+
+Use the **Corpus files** tab in `corpus.xlsx` as the list of files to review. It includes the project code, document ID and file link. Note your coding status against each file. First, establish which parts of the project involve AI. Read the relevant material and mark each distinct concern or task. Check who raised it, what it concerned and what response is recorded. You may use your knowledge of the project to find missing files or ask colleagues for clarification. Record who clarified the point and when.
+
+For each RAI task, also ask: What was the decision-maker trying to achieve? Did that goal prompt the RAI task, or did the RAI task create another need? Record the wider goal only if it appears in the records or is confirmed by someone familiar with the project. Connect the needs as “goal prompted RAI task”, “RAI task led to goal”, or “related; direction unclear”. A goal may connect to several RAI tasks, or none may be known. Do not infer cause merely because both appear in the same project.
+
+Different documents support different claims:
+
+- Calls and transcripts: record the speaker and time in the recording. A suggestion is not a decision; someone's account of another person's action is a reported action.
+- Emails, meeting notes and task tickets: record the message date, ticket ID or meeting date and the relevant extract. A ticket marked “done” confirms its recorded status, not necessarily that the change was deployed or effective.
+- Funding applications, ethics submissions, reviews and contracts: identify the requirement, commitment or approval and who issued it. Plans and promises are not evidence of completion. Check whether a reviewer requested a change and whether a later record shows the response.
+- Technical specifications, test reports and system logs: identify what was designed, tested or recorded, and when. Explain why this matters for the AI governance question. A technical detail alone does not establish an episode.
+
+For each episode, record the project's TRL at the time, if known (TRL 2–8). If only the project's starting and ending TRLs are available, record that range and mark the episode's TRL unknown. Do not guess a TRL from the kind of document or create separate lifecycle-stage codes. Record the work being discussed in ordinary words, such as data access, model testing or pilot deployment.
+
+Describe the recorded activity as one of: concern or question; requirement; proposal; discussion; decision; action; review or correction. Record the response separately: not recorded; planned; in progress; reported complete; documented complete; approved or verified; deferred or rejected. Use only the status supported by the records.
+
+## 4. Connecting the information to its evidence
+
+Each episode needs a unique ID and a link to its Project, AIComponent, TopLevelProblem and supporting source. Add the other entities when they are relevant. Record the relationships in plain language, for example:
+
+- The clinician requested a review of the prediction module.
+- The module uses the hospital dataset for model training.
+- The funder requested an AI-specific risk report.
+- The CEO’s need to secure funding prompted the report task.
+- The development team proposed a restriction on patient-facing predictions.
+
+For every important statement or connection, record:
+
+- Source: filename or document ID, plus page, paragraph, timestamp, message ID or ticket number.
+- Evidence: the exact short passage supporting it; retain the original wording.
+- Date: when the activity happened, if known. Keep this separate from the document date.
+- Certainty: Direct (stated clearly in a source); Linked (supported by two or more connected records); or Needs checking (unclear until verified). Do not include an unverified connection as a finding.
+
+If records disagree, keep both and state the difference. Do not assume that assigning a responsibility means the work was carried out, or that producing a report means an external body accepted it.
+
+Use the same source passage for several links when appropriate, but say which statement each passage supports. Keep evidence for each need and for the connection between them. One document can contain several episodes; one episode can have evidence in several documents.
+
+## 5. Recording the coding in the spreadsheet
+
+Use `corpus.xlsx` for coding. The **Projects** tab provides project codes, comments, TRLs (start and finish). Record each episode in **Episodes**, its RAI need and any linked decision-maker goal in **TopLevelNeeds**, and people, AI components, datasets and other relevant items in **Entities**. Record source extracts in **Evidence** and connections between items in **Links**. Use the document IDs from **Corpus files** when referring to sources.
+
+Example: In Org02, an external reviewer requested an AI-specific account of the model's data use and risks. Record the request and subsequent reporting work separately. Do not assume the report was accepted without an approval record.
+
+Example of linked needs: A founder wants to raise funds for an AI pilot. A prospective funder requires an AI risk assessment. Record “Secure pilot funding” as the decision-maker need and “Produce the AI risk assessment” as the RAI need. Link them as “goal prompted RAI task” only if a source says the funding requirement motivated that work. Conversely, if an RAI assessment creates a documented need to fund more testing, link it as “RAI task led to goal”.
+
+Before finishing, compare episodes from the same project and join records about the same task. For comparisons between projects, look for a similar task, not merely the same broad topic. A task appears across projects only when there is evidence from at least two different projects.
+
+When a category does not fit, write a short note with the proposed new name, its meaning and an example. Discuss it with another coder before adding it. Keep a record of changes so earlier episodes can be checked against the updated categories.
+
+## 6. Responsible AI topics: questions to look for
+
+These categories help identify relevant concerns. They are not a list of actions that every project must perform. Select the topics supported by the record; several may apply.
+
+- R01 Human oversight: Who reviews AI advice? Can clinicians question or override it?
+- R02 Safety: Could an inaccurate alert or recommendation harm a patient? Who decides what risk is acceptable?
+- R03 Fairness and bias: Are some populations missing from the data? Does performance differ between groups?
+- R04 Privacy and consent: May these records be used to train or test AI? Who may access or share them?
+- R05 Transparency and explanation: Do clinicians or patients know AI is being used and understand its limits?
+- R06 Accountability: Who is responsible for approval, testing, decisions or failures? Is that responsibility agreed?
+- R07 Validity and reliability: Is the model accurate enough for its intended use? What clinical evidence is needed?
+- R08 Security: Are AI data and outputs protected? Has an access or authentication safeguard changed?
+- R09 Participation and accessibility: Were intended users or affected groups consulted? Can they use the system?
+- R10 Regulation and assurance: Which legal, ethics-review or funder requirements apply? What proof is requested?
+- R11 Monitoring and correction: Who watches for errors, changing performance or harm after use? Who can correct or stop the system?
+- R12 Appropriate use of AI: Is AI suitable for this task? Should its use be limited, postponed or abandoned?
+- R13 Challenge and remedy: Can someone contest a prediction or report harm? How is the issue addressed?
+- R14 Resources and expertise: Does the team have the skills, time or support to carry out a specific governance task?
+
+Questions may arise at any TRL. The following examples are a guide:
+
+TRL 2–3, early development: What is the proposed AI for? Is AI appropriate? What data and permissions will be needed? Whose needs or risks have been considered? Who can advise on clinical or regulatory obligations?
+
+TRL 4–5, development and validation: Is the training data suitable? Have bias, safety and reliability been assessed? Can intended users interpret the results? Who tests the model and decides whether the evidence is sufficient?
+
+TRL 6–8, pilots and later development: Who can act on AI outputs? Are safeguards working in the intended setting? What happens when the model makes an error? Who monitors performance, handles complaints, approves changes or decides to stop using it?
+
+
