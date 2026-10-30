@@ -1,6 +1,6 @@
 # Cross project coding guide
 
-Version 1.5, 29 September 2026 (cleaned)
+Version 1.7, 29 September 2026 (cleaned)
 
 ##Coding guide: comparing governance tasks across projects
 
@@ -14,7 +14,7 @@ Choose a **Recurring governance task category**, then select relevant episodes i
 
 Treat an episode as a concern, decision or activity that may span several records. Do not count each document or repeated statement as a separate episode. Include development work when its connection to AI is established.
 
-**3. Compare the cases using three analytical questions.**
+##3. Compare the cases using three analytical questions.
 
 - **What triggered** Compare initiating authorities, evidence demands and recorded responses. Look for sources connecting a requirement or objective to particular decisions. 
 - **What are different organisations represented?** Within the same category, compare episodes and their internal/external roles. Distinguish direct (active) stakeholder participation from someone speaking on their behalf.
@@ -23,6 +23,6 @@ Treat an episode as a concern, decision or activity that may span several record
   
 Treat these questions as prompts for investigation. 
 
-**4. Record as interpetation.**
+##4. Record as interpetation.
 
 Check cases and have another researcher review the interpretation. Count distinct projects for each. Treat missing records as unknown. Can someone from the project team fill the gap? 
